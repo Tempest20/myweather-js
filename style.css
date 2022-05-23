@@ -96,3 +96,27 @@ header h1 {
     text-transform: capitalize;
 }
 
+@media only screen and (max-width: 576px){
+    
+    .input-container .input-box input {
+        padding: 10px;
+    }
+
+    .input-container .input-box button {
+        padding: 13px 16px;
+        font-size: 1.6rem;
+    }
+
+
+    .weather-container {
+        width: 90%;
+    }
+
+    .weather-container p {
+        font-size: 1.3rem;
+    }
+
+    .weather-container span {
+        font-size: 1.3rem;
+    }
+}
