@@ -98,6 +98,11 @@ header h1 {
 
 @media only screen and (max-width: 576px){
     
+    body {
+        overflow: hidden !important;
+        height: 100% !important;
+    }
+    
     .input-container .input-box input {
         padding: 10px;
     }
