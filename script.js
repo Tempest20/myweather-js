@@ -1,29 +1,26 @@
-// initialisation 
 let cityInput = document.getElementById("cityInput");
 let cityName = document.getElementById("cityName");
 let temp = document.getElementById("temp");
 let desc = document.getElementById("desc");
 let button = document.getElementById("button");
+const KELVIN_TO_CELSIUS = 273.15;
 
-// button function
+// button 
 button.addEventListener("click", () => {
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+cityInput.value+'&APPID=3be5bb848a98ee3ef61a7da298e6cff6')
     .then(response => response.json())
     .then(data => {
+        
         let dataName = data['name'];
-        //cityName.innerHTML = dataName;
-
         let dataTemp = data['main']['temp'];
+        let dataDesc = data['weather'][0]['description'];
+        
         dataTemp = parseFloat(dataTemp);
         // conversion from Kelvin to Celsius
-        dataTemp = Math.round(dataTemp - 273.15);
-        //temp.innerHTML = dataTemp + "° C";
-
-        let dataDesc = data['weather'][0]['description'];
-        //desc.innerHTML = dataDesc;
+        dataTemp = Math.round(dataTemp - KELVIN_TO_CELSIUS);
+        
 
         weatherBalloon(dataName, dataTemp, dataDesc);
-
     })
     // error handler
     .catch( () => {
@@ -33,8 +30,8 @@ button.addEventListener("click", () => {
     })
 })
 
-
-let weatherBalloon = (n, t, d) => {
+// using a seperate function to set the innerHTML
+const weatherBalloon = (n, t, d) => {
 
     $(document).ready(function() {
         $("#cityName").hide();
