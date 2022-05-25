@@ -1,8 +1,8 @@
-let cityInput = document.getElementById("cityInput");
-let cityName = document.getElementById("cityName");
-let temp = document.getElementById("temp");
-let desc = document.getElementById("desc");
-let button = document.getElementById("button");
+const cityInput = document.getElementById("cityInput");
+const cityName = document.getElementById("cityName");
+const temp = document.getElementById("temp");
+const desc = document.getElementById("desc");
+const button = document.getElementById("button");
 const KELVIN_TO_CELSIUS = 273.15;
 
 // button 
